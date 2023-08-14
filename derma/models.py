@@ -1,0 +1,47 @@
+from django.db import models
+
+
+# Create your models here.
+class LesionRequest(models.Model):
+    image = models.ImageField()
+    cedula = models.CharField(max_length=10)
+    nombre = models.CharField(max_length=256)
+    temperatura = models.DecimalField(decimal_places=2, max_digits=10)
+    edad = models.IntegerField()
+    dolor_cabeza = models.BooleanField(default=False)
+    conjuntivitis = models.BooleanField(default=False)
+    malestar_general = models.BooleanField(default=False)
+    ganglios_hinchados = models.BooleanField(default=False)
+    tos = models.BooleanField(default=False)
+    moqueo = models.BooleanField(default=False)
+    dolor_garganta = models.BooleanField(default=False)
+    diarrea = models.BooleanField(default=False)
+    vomito = models.BooleanField(default=False)
+    nauseas = models.BooleanField(default=False)
+    comenzon = models.BooleanField(default=False)
+    perdida_apetito = models.BooleanField(default=False)
+    dolor_tragar = models.BooleanField(default=False)
+    hinchazon = models.BooleanField(default=False)
+    hinchazon_boca = models.BooleanField(default=False)
+    dolor_abdominal = models.BooleanField(default=False)
+    escalofrio = models.BooleanField(default=False)
+    perdida_gusto = models.BooleanField(default=False)
+    dolor_dentadura = models.BooleanField(default=False)
+    cara = models.BooleanField(default=False)
+    torso = models.BooleanField(default=False)
+    cabeza = models.BooleanField(default=False)
+    extremidades_superiores = models.BooleanField(default=False)
+    extremidades_inferiores = models.BooleanField(default=False)
+    genitales = models.BooleanField(default=False)
+    manos = models.BooleanField(default=False)
+    boca = models.BooleanField(default=False)
+    pies = models.BooleanField(default=False)
+
+
+class LesionResponse(models.Model):
+    cedula = models.CharField(max_length=10)
+    nombre = models.CharField(max_length=256)
+    edad = models.IntegerField()
+    lesion = models.CharField(max_length=256)
+    enfermedad = models.CharField(max_length=256)
+    tratamiento = models.CharField(max_length=1000)

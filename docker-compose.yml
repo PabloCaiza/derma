@@ -1,0 +1,11 @@
+version: '3'
+services:
+  derma:
+    expose:
+      - 8000
+    image: us-central1-docker.pkg.dev/delli-recetas/delli-recetas-docker-repo/derma:2.0
+    ports:
+      - "9000:9000"
+    environment:
+      - OPENAI_API_KEY=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
+      - PORT=9000
